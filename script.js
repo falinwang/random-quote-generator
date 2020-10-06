@@ -21,7 +21,7 @@ function removeLoadingSpinner() {
 // Get quote from API
 async function getQuote() {
   showLoadingSpinner();
-  const API_URL = "http://api.quotable.io/random";
+  const API_URL = "https://api.quotable.io/random";
   try {
     const res = await fetch(API_URL);
     const data = await res.json();
@@ -41,7 +41,6 @@ async function getQuote() {
     removeLoadingSpinner();
   } catch (error) {
     console.log("API went wrong", error);
-    getQuote();
   }
 }
 
